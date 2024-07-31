@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Broken-time.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Unity\Repos\Broken-time\.idea\.idea.Broken-time\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
