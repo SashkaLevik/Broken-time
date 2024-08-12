@@ -1,8 +1,8 @@
-﻿using Assets.CodeBase.Data;
-using Assets.CodeBase.Infrastructure.RunGameLogic;
-using Assets.CodeBase.Infrastructure.Services;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.RunGameLogic;
+using CodeBase.Infrastructure.Services;
 
-namespace Assets.CodeBase.Infrastructure.States
+namespace CodeBase.Infrastructure.States
 {
     public class ProgressState : IState
     {

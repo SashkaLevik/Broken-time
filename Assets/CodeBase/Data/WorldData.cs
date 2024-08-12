@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.CodeBase.Data
+namespace CodeBase.Data
 {
     [Serializable]
     public class WorldData

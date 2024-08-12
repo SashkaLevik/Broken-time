@@ -1,9 +1,9 @@
-﻿using Assets.CodeBase.Infrastructure.AssetManagment;
-using Assets.CodeBase.Infrastructure.Factory;
-using Assets.CodeBase.Infrastructure.RunGameLogic;
-using Assets.CodeBase.Infrastructure.Services;
+﻿using CodeBase.Infrastructure.AssetManagment;
+using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.RunGameLogic;
+using CodeBase.Infrastructure.Services;
 
-namespace Assets.CodeBase.Infrastructure.States
+namespace CodeBase.Infrastructure.States
 {
     public class BootstrapState : IState
     {
@@ -33,10 +33,13 @@ namespace Assets.CodeBase.Infrastructure.States
         private void RegisterServices()
         {
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
-            RegisterToyData();
+            RegisterStaticData();
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>()));
+            
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(),
+                _services.Single<IStaticDataService>(), _services.Single<IPersistentProgressService>()));
+            
             _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(),
                 _services.Single<IGameFactory>()));
         }
@@ -46,8 +49,11 @@ namespace Assets.CodeBase.Infrastructure.States
             _stateMachine.Enter<ProgressState>();
         }
 
-        private void RegisterToyData()
+        private void RegisterStaticData()
         {
+            IStaticDataService staticData = new StaticDataService();
+            staticData.LoadWindowData();
+            _services.RegisterSingle(staticData);
             //IToyDataService toyData = new ToyDataService();
             //toyData.Load();
             //_services.RegisterSingle(toyData);

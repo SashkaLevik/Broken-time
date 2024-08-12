@@ -1,11 +1,11 @@
-﻿using Assets.CodeBase.Data;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Data;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.CodeBase.GameEnvironment.UI
+namespace CodeBase.GameEnvironment.UI
 {
     public class DialogWindow : MonoBehaviour
     {

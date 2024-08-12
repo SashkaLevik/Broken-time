@@ -1,11 +1,11 @@
-﻿using Assets.CodeBase.Infrastructure.Factory;
-using Assets.CodeBase.Infrastructure.RunGameLogic;
-using Assets.CodeBase.Infrastructure.SaveLoad;
-using Assets.CodeBase.Infrastructure.Services;
-using System.Collections;
+﻿using System.Collections;
+using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.RunGameLogic;
+using CodeBase.Infrastructure.SaveLoad;
+using CodeBase.Infrastructure.Services;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.States
+namespace CodeBase.Infrastructure.States
 {
     public class MenuState : IPayloadedState<string>, IState
     {
@@ -34,14 +34,13 @@ namespace Assets.CodeBase.Infrastructure.States
 
         public void Enter() { }
 
-        public void Exit()
-        {
+        public void Exit() =>
             _curtain.Hide();
-        }
 
         private void OnLoaded()
         {
-            CreateMenu();
+            CreateGarage();
+            CreateTruck();
             InformProgressReaders();
 
             _gameStateMachine.Enter<LoopState>();
@@ -56,6 +55,16 @@ namespace Assets.CodeBase.Infrastructure.States
         private void CreateMenu()
         {
             GameObject menuHud = _gameFactory.CreteMenuHud();
+        }
+
+        private void CreateGarage()
+        {
+            GameObject garage = _gameFactory.CreateGarage();
+        }
+
+        private void CreateTruck()
+        {
+            GameObject truck = _gameFactory.CreateTruckConstructor();
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using Assets.CodeBase.Infrastructure.Services;
-using Assets.CodeBase.Infrastructure.States;
+﻿using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.States;
 
-namespace Assets.CodeBase.Infrastructure.RunGameLogic
+namespace CodeBase.Infrastructure.RunGameLogic
 {
     public class Game
     {

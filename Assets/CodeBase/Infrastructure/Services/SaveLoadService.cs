@@ -1,9 +1,9 @@
-﻿using Assets.CodeBase.Data;
-using Assets.CodeBase.Infrastructure.Factory;
-using Assets.CodeBase.Infrastructure.SaveLoad;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.SaveLoad;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Services
+namespace CodeBase.Infrastructure.Services
 {
     public class SaveLoadService : ISaveLoadService
     {

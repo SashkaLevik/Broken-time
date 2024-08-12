@@ -1,6 +1,6 @@
-﻿using Assets.CodeBase.Data;
+﻿using CodeBase.Data;
 
-namespace Assets.CodeBase.Infrastructure.SaveLoad
+namespace CodeBase.Infrastructure.SaveLoad
 {
     public interface ILoadProgress
     {

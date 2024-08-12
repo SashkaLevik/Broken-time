@@ -1,10 +1,10 @@
-﻿using Assets.CodeBase.Infrastructure.Factory;
-using Assets.CodeBase.Infrastructure.RunGameLogic;
-using Assets.CodeBase.Infrastructure.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.RunGameLogic;
+using CodeBase.Infrastructure.Services;
 
-namespace Assets.CodeBase.Infrastructure.States
+namespace CodeBase.Infrastructure.States
 {
     public class GameStateMachine : IGameStateMachine
     {
